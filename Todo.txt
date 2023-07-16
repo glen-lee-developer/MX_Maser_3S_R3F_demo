@@ -1,0 +1,7 @@
+[Better Text]
+Responsiveness
+Add specs and buy now
+Fix sticky scroll vs have it leave viewport - Scroll in overlayS
+Deploy
+Add readme
+Move to new project and create new repo

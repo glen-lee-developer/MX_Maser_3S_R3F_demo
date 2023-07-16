@@ -1,0 +1,1 @@
+ export type ConfigColoursType = "white" | "silver" | "black"
