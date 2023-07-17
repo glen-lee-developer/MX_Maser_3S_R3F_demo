@@ -1,14 +1,14 @@
-Change title text
 Sort out text and animation timings on smaller screens
 Fix Background encoding
-
-
+Responsiveness - text especially
 Better Text
-Responsiveness
+
+
 Add specs and buy now
-Add readme
-Get prettier working
+
 Fix Scroll wheel colour
 Figure out Suspense
 Play with camera
 
+Get prettier working
+Add readme
