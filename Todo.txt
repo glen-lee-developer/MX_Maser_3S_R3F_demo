@@ -4,3 +4,7 @@ Add specs and buy now
 Add readme
 Get prettier working
 Fix GLTF type
+Fix Scroll wheel colour
+Figure out Suspense
+Play with camera
+Fix Background encoding
