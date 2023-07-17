@@ -1,8 +1,7 @@
 Sort out text and animation timings on smaller screens
 Fix Background encoding
-Responsiveness - text especially
-Better Text
 
+Add Scroll Indicator
 
 Add specs and buy now
 
