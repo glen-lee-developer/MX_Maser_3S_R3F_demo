@@ -8,3 +8,5 @@ Fix Scroll wheel colour
 Figure out Suspense
 Play with camera
 Fix Background encoding
+Fix flashing white screen on deployment state change
+Sort out text and animation timings on smaller screens

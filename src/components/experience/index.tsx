@@ -18,7 +18,7 @@ export const Experience = ({ configuration }: ExperienceProps) => {
 
   return (
     <>
-      <ScrollControls pages={9}>
+      <ScrollControls pages={18}>
         <Overlay />
         <Mouse configuration={configuration} />
       </ScrollControls>
