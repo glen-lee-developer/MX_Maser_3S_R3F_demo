@@ -3,7 +3,7 @@ import { useGLTF, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
-// import { MouseGLTFType } from "../../types/MouseGLTFType";
+import { MouseGLTFType } from "../../types/MouseGLTFType";
 import { ConfigColoursType } from "../../types/configColoursType";
 
 type MouseProps = {
@@ -11,7 +11,7 @@ type MouseProps = {
 };
 
 const Mouse = ({ configuration }: MouseProps) => {
-  const model = useGLTF("./models/mouse.gltf") as any;
+  const model = useGLTF("./models/mouse.gltf") as MouseGLTFType;
   const { nodes, materials } = model;
   const mouseRef = useRef<Group>(null);
   const tl = useRef<gsap.core.Timeline | undefined>(gsap.timeline());
