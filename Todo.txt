@@ -3,4 +3,4 @@ Responsiveness
 Add specs and buy now
 Add readme
 Get prettier working
-Fix GLTF Type
+Fix GLTF type
