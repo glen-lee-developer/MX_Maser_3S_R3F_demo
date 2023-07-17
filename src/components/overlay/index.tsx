@@ -1,24 +1,14 @@
-import { Html, Scroll, useScroll } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import { CardType } from "../../types/cardType";
 import ContactText from "./contactText";
 import IntroText from "./introText";
-import {Card} from "./card";
-import ConfigurationButtons from "./configurationButtons";
-import { ConfigColoursType } from "../../types/configColoursType";
-import { useThree } from "@react-three/fiber";
+import { Card } from "./card";
 
-type OverlayProps = {
-	configuration:ConfigColoursType;
-	setConfiguration: React.Dispatch<React.SetStateAction<ConfigColoursType>>;
-}
+export const Overlay = () => {
 
-export const Overlay = ({configuration, setConfiguration}:OverlayProps) => {
-	
-	
 	return (
 		<>
 		<Html>
-			<ConfigurationButtons configuration={configuration} setConfiguration={setConfiguration}  />
 			<IntroText />
 			{cardData.map((card,i) => {
 				return <Card key={i} {...card} />

@@ -1,6 +1,6 @@
-// @ts-nocheck
-import { SpotLight, useGLTF, useScroll, useTexture } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import {  Group } from "three";
+import {  useGLTF, useScroll} from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
 import { MouseGLTFType } from "../../types/MouseGLTFType";
@@ -9,28 +9,25 @@ import { ConfigColoursType } from "../../types/configColoursType"
 type MouseProps = {
 	configuration:ConfigColoursType;
 }
-const Mouse = ({configuration }:MouseProps) => {
 
+const Mouse = ({ configuration }:MouseProps) => {
 	const model = useGLTF("./models/mouse.gltf") as MouseGLTFType;
 	const { nodes, materials } = model;
-	const mouseRef = useRef()
-	const tl = useRef();
+	const mouseRef = useRef<Group>(null);
+	const tl = useRef<gsap.core.Timeline | undefined>(gsap.timeline());
 	const scroll = useScroll();
-	// const { viewport } = useThree()
-	// console.log(viewport)
 
-
-	// console.log(viewport.width / standardWidth,"viewport width")
-	// console.log(scale,"Scale")
-	
 	useFrame(() => {
-		tl.current.seek(scroll.offset * tl.current.duration());
-	
+		if (tl.current) {
+			tl.current.seek(scroll.offset * tl.current.duration());
+		}
 	});
 
 	useLayoutEffect(() => {
+	
 		tl.current = gsap.timeline();
-		
+		if (tl.current === undefined || mouseRef.current === undefined ||  !mouseRef.current) return;
+
 		tl.current 
 				// Tilt down
 			.to(
@@ -58,7 +55,6 @@ const Mouse = ({configuration }:MouseProps) => {
 				},
 				3.5
 			)
-			//  Text1
 			//  Rght Click
 			.to(
 				mouseRef.current.rotation,
@@ -265,7 +261,6 @@ const Mouse = ({configuration }:MouseProps) => {
 						castShadow
 						receiveShadow
 						geometry={nodes.mesh_0_2.geometry}
-						// material={materials.Base}
 					>
 						<meshStandardMaterial color={configuration === "white" ? "white" : "black"} />
 					</mesh>
@@ -274,8 +269,8 @@ const Mouse = ({configuration }:MouseProps) => {
 						castShadow
 						receiveShadow
 						geometry={nodes.mesh_0_1.geometry}
-						metalTextureProps
-						// material={materials.Aluminium}
+						
+						material={materials.Aluminium}
 						>
 						<meshStandardMaterial color={configuration === "black" ?  "black" : "grey"} />
 					</mesh>
@@ -352,6 +347,6 @@ const Mouse = ({configuration }:MouseProps) => {
 	)
 }
 
-useGLTF.preload("./models/mousePaid.gltf");
+useGLTF.preload("./models/mouse.gltf");
 export default Mouse;
 

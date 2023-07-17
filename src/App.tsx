@@ -1,14 +1,15 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, SpotLight } from "@react-three/drei";
 import { Experience } from "./components/experience";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
+import { ConfigColoursType } from "./types/configColoursType";
+import ConfigurationButtons from "./components/configurationButtons";
 
 
 function App() {
+	const [configuration, setConfiguration] = useState<ConfigColoursType>("black")
 
-	
-	
 	return (
+		<>
 			<Canvas
 			dpr={[1, 2]}
 			camera={{
@@ -16,9 +17,9 @@ function App() {
 				position: [0, 0, 0],
 			}}
 			style={{
-				position: "fixed",
-				width: "100%",
-				height: "100%",
+				// position: "fixed",
+				// width: "100%",
+				// height: "100%",
 				// zIndex: -1,
 			}}
 			>
@@ -27,9 +28,12 @@ function App() {
 			<directionalLight position={[3.3, 1.0, -4.4]} intensity={2} />
 			{/* <OrbitControls enableZoom /> */}
 			<Suspense fallback={null}>
-				<Experience />
+				<Experience configuration={configuration} />
 			</Suspense>
 		</Canvas>
+		
+		<ConfigurationButtons configuration={configuration} setConfiguration={setConfiguration}/>
+		</>
 	);
 }
 

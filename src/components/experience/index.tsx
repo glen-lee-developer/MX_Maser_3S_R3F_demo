@@ -1,21 +1,20 @@
-import { ScrollControls, SpotLight } from "@react-three/drei";
+import { ScrollControls } from "@react-three/drei";
 import Overlay from "../overlay";
 import Mouse from "../mouse";
-import { useState } from "react";
 import { ConfigColoursType } from "../../types/configColoursType";
-import { useThree } from "@react-three/fiber";
 
+type ExperienceProps = {
+	configuration:ConfigColoursType;
+}
 
-
-export const Experience = () => {
-	const [configuration, setConfiguration] = useState<ConfigColoursType>("black")
-	// const { viewport } = useThree()
-	// console.log(viewport)
+export const Experience = ({ configuration }:ExperienceProps) => {
 		return (
-			<ScrollControls pages={18} >
-				<Overlay configuration={configuration} setConfiguration={setConfiguration}/>
-				<Mouse configuration={configuration} />
-			</ScrollControls>
+			<>
+			<ScrollControls pages={9} >
+					<Overlay  />
+					<Mouse configuration={configuration} />
+				</ScrollControls>
+			</>
 	)
 };
 
