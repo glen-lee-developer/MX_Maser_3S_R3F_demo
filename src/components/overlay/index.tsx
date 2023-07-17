@@ -30,10 +30,10 @@ const cardData: CardType[] = [
     bullet3: "Optimal sensitivity",
   },
   {
-    title: "SCROLL 1,000 ",
+    title: "Scroll 1000",
     subtitle: "Lines per Second",
     bullet1: "Adjustable electromagnetic scroll",
-    bullet2: "Dynamic Intertia is 87% more precise",
+    bullet2: "Dynamic Inertia is 87% more precise",
     bullet3: "90% Faster experience",
   },
   {
@@ -46,16 +46,16 @@ const cardData: CardType[] = [
   {
     title: "Programmable",
     subtitle: "Custom Commands",
-    bullet1: "Personalize commands",
+    bullet1: "Personalise commands",
     bullet2: "Streamline workflow",
-    bullet3: "Efortless macros",
+    bullet3: "Effortless macros",
   },
   {
     title: "USB-C",
-    subtitle: "70 Day Battery",
+    subtitle: "70-Day Battery",
     bullet1: "Almost always wireless",
     bullet2: "3 hours to fully charge",
-    bullet3: "3 hours use from a 1 minute charge",
+    bullet3: "3 hours of use from a 1-minute charge",
   },
   {
     title: "8K DPI",
